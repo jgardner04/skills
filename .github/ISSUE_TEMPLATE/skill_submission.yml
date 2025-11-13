@@ -1,0 +1,160 @@
+name: Skill Submission
+description: Propose a new skill for the marketplace
+title: "[SKILL] "
+labels: ["new-skill", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a new skill! This form helps us evaluate your skill idea before you invest time in full development.
+
+        **Note**: For skill submissions via Pull Request, please use the PR template instead.
+
+  - type: input
+    id: skill-name
+    attributes:
+      label: Skill Name
+      description: Proposed name for your skill (lowercase, hyphens only)
+      placeholder: e.g., api-builder, data-analyzer
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Skill Description
+      description: A clear, concise description of what the skill does and when Claude should use it
+      placeholder: |
+        Explain:
+        - What the skill does (1-2 sentences)
+        - When Claude should activate it (trigger conditions)
+        - Key capabilities (enumerate if multiple)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Skill Category
+      description: Which category best fits this skill?
+      options:
+        - Development & Technical
+        - Creative & Design
+        - Data & Analytics
+        - Documentation & Writing
+        - Testing & Quality
+        - Integration & Automation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-cases
+    attributes:
+      label: Use Cases
+      description: Provide 2-3 specific examples of when this skill would be useful
+      placeholder: |
+        1. Use case one...
+        2. Use case two...
+        3. Use case three...
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation
+    attributes:
+      label: Implementation Details
+      description: How will this skill work? What instructions will it provide?
+      placeholder: |
+        - Key steps or workflow
+        - Any supporting files needed (scripts, templates, reference docs)
+        - Dependencies or requirements
+    validations:
+      required: true
+
+  - type: dropdown
+    id: supporting-files
+    attributes:
+      label: Supporting Files
+      description: Will this skill include supporting files?
+      options:
+        - Just SKILL.md
+        - Scripts (Python/Node/etc.)
+        - Templates
+        - Reference documentation
+        - Multiple of the above
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: Proposed License
+      description: What license will you use for this skill?
+      placeholder: e.g., Apache 2.0, MIT
+    validations:
+      required: true
+
+  - type: textarea
+    id: similar
+    attributes:
+      label: Similar Skills or Tools
+      description: Are there any similar skills or tools? How is yours different?
+      placeholder: Describe any similar existing solutions and how your skill differs...
+
+  - type: dropdown
+    id: readiness
+    attributes:
+      label: Development Status
+      description: What stage is this skill at?
+      options:
+        - Just an idea - seeking feedback
+        - Partially developed - need input
+        - Fully developed - ready for PR
+        - In use personally - want to share
+    validations:
+      required: true
+
+  - type: textarea
+    id: example
+    attributes:
+      label: Example Interaction
+      description: Show an example of how Claude would use this skill
+      placeholder: |
+        User: "..."
+        Claude: [activates skill] "..."
+        Result: ...
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: Contribution Plan
+      options:
+        - label: I plan to implement this skill myself
+        - label: I'm seeking collaborators to help implement
+        - label: I'm suggesting this for someone else to implement
+        - label: I can provide testing and feedback
+
+  - type: textarea
+    id: timeline
+    attributes:
+      label: Timeline
+      description: If you're implementing this, when do you expect to submit a PR?
+      placeholder: e.g., Within 2 weeks, Within a month, No specific timeline
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission Checklist
+      description: Please verify the following before submitting
+      options:
+        - label: I have searched existing skills and issues to avoid duplicates
+          required: true
+        - label: I have read the skills specification (agent_skills_spec.md)
+          required: true
+        - label: I have read the contributing guidelines (CONTRIBUTING.md)
+          required: true
+        - label: This skill has a clear, specific purpose
+          required: true
+        - label: This skill would benefit multiple users, not just my specific use case
+          required: true

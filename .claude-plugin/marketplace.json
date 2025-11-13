@@ -1,0 +1,14 @@
+{
+  "name": "jgardner04-skills",
+  "owner": "jgardner04",
+  "version": "1.0.0",
+  "description": "Personal skills marketplace for Claude agent capabilities",
+  "plugins": [
+    {
+      "name": "jgardner04-skills",
+      "description": "Collection of custom skills for enhancing Claude's capabilities across various domains",
+      "skills": [],
+      "strict": false
+    }
+  ]
+}
