@@ -6,7 +6,8 @@
       "Bash(tree:*)",
       "Bash(gh api:*)",
       "Bash(pip install:*)",
-      "Bash(python scripts/validate_skill.py:*)"
+      "Bash(python scripts/validate_skill.py:*)",
+      "WebFetch(domain:api.github.com)"
     ],
     "deny": [],
     "ask": []
