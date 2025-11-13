@@ -31,9 +31,19 @@ skills/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/        # Bug, feature, skill submission templates
 │   └── pull_request_template.md
+├── scripts/                   # Validation and packaging tools
+│   ├── validate_skill.py     # Validates skills against spec
+│   ├── package_skill.py      # Creates distributable packages
+│   ├── skill_utils.py        # Shared utilities
+│   └── __init__.py           # Python package init
 ├── template-skill/            # Starter template for new skills
 │   ├── SKILL.md
 │   └── LICENSE.txt
+├── skill-creator/            # Meta-skill for creating skills
+│   ├── SKILL.md              # Skill definition
+│   ├── LICENSE.txt           # Apache 2.0
+│   ├── README.md             # Skill documentation
+│   └── reference/            # Reference docs
 ├── [skill-name]/             # Individual skill directories
 │   ├── SKILL.md              # Required
 │   ├── LICENSE.txt           # Required
@@ -41,6 +51,7 @@ skills/
 │   ├── reference/            # Optional documentation
 │   └── templates/            # Optional template files
 ├── agent_skills_spec.md      # Skills specification (v1.0)
+├── requirements.txt          # Python dependencies for scripts
 ├── CONTRIBUTING.md           # Contribution guidelines
 ├── CODE_OF_CONDUCT.md        # Community standards
 ├── SECURITY.md               # Security policy
@@ -61,6 +72,7 @@ skills/
 2. Test skill behavior in conversations
 
 **Validation:**
+- Run validation script: `python scripts/validate_skill.py skill-name/`
 - Verify skill name matches directory name (lowercase, hyphens)
 - Ensure description clearly specifies trigger conditions
 - Test all examples in documentation
@@ -80,6 +92,25 @@ When new skills are added, update `.claude-plugin/marketplace.json`:
 - Add skill name to appropriate plugin's skills array
 - Ensure skill directory exists
 - Verify SKILL.md has valid frontmatter
+
+### Using Validation and Packaging Scripts
+
+**Prerequisites:**
+```bash
+pip install -r requirements.txt
+```
+
+**Validate a Skill:**
+```bash
+python scripts/validate_skill.py path/to/skill-name/
+```
+Checks: YAML format, naming conventions, description length, file structure, restricted terms.
+
+**Package a Skill:**
+```bash
+python scripts/package_skill.py path/to/skill-name/ --output skill-name.zip
+```
+Creates a distributable ZIP with all skill files and metadata.
 
 ### Code Quality Standards
 

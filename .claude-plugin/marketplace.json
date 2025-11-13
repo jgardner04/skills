@@ -7,7 +7,7 @@
     {
       "name": "jgardner04-skills",
       "description": "Collection of custom skills for enhancing Claude's capabilities across various domains",
-      "skills": [],
+      "skills": ["skill-creator"],
       "strict": false
     }
   ]

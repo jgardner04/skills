@@ -47,6 +47,10 @@ message = client.messages.create(
 skills/
 ├── .claude-plugin/         # Marketplace configuration
 ├── .github/                # Issue templates and workflows
+├── scripts/                # Validation and packaging tools
+│   ├── validate_skill.py  # Skill validation script
+│   ├── package_skill.py   # Skill packaging script
+│   └── skill_utils.py     # Shared utilities
 ├── template-skill/         # Starter template for new skills
 ├── skill-name/            # Individual skill directories
 │   ├── SKILL.md          # Required: Skill definition
@@ -55,6 +59,7 @@ skills/
 │   ├── reference/        # Optional: Reference documentation
 │   └── templates/        # Optional: Template files
 ├── agent_skills_spec.md  # Skills specification
+├── requirements.txt      # Python dependencies
 └── README.md             # This file
 ```
 
@@ -69,6 +74,44 @@ Want to contribute a new skill? Great! Here's how:
 5. **Submit a PR**: See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines
 
 See [agent_skills_spec.md](agent_skills_spec.md) for the complete specification.
+
+## Validation and Packaging Tools
+
+This repository includes Python scripts to help you validate and package your skills:
+
+### Prerequisites
+
+```bash
+pip install -r requirements.txt
+```
+
+### Validate a Skill
+
+Ensure your skill meets all requirements:
+
+```bash
+python scripts/validate_skill.py path/to/your-skill/
+```
+
+The validator checks:
+- YAML frontmatter format and required fields
+- Naming conventions (lowercase, hyphens, max 64 chars)
+- Description length and format
+- File structure and encoding
+- No restricted terms or XML tags
+
+### Package a Skill
+
+Create a distributable package:
+
+```bash
+python scripts/package_skill.py path/to/your-skill/ --output your-skill.zip
+```
+
+This creates a ZIP file containing:
+- SKILL.md and all supporting files
+- Metadata and installation instructions
+- Ready for sharing or marketplace submission
 
 ## Contributing
 

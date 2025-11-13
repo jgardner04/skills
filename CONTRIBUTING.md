@@ -132,13 +132,20 @@ Copy the appropriate license template to `LICENSE.txt` in your skill directory.
 
 Before submitting:
 
-1. **Test with Claude Code**: Add the skill locally and verify it works
-2. **Test with Claude.ai**: Copy instructions to project settings and test
-3. **Verify Activation**: Ensure Claude activates the skill at appropriate times
-4. **Check Examples**: Verify all examples in your documentation work
-5. **Review Dependencies**: Test any scripts or templates included
+1. **Validate with the validation script**:
+   ```bash
+   python scripts/validate_skill.py your-skill-name/
+   ```
+   This checks YAML format, naming conventions, description length, and file structure.
+
+2. **Test with Claude Code**: Add the skill locally and verify it works
+3. **Test with Claude.ai**: Copy instructions to project settings and test
+4. **Verify Activation**: Ensure Claude activates the skill at appropriate times
+5. **Check Examples**: Verify all examples in your documentation work
+6. **Review Dependencies**: Test any scripts or templates included
 
 **Testing Checklist:**
+- [ ] Passes validation script (`python scripts/validate_skill.py`)
 - [ ] Skill activates when expected
 - [ ] Instructions are clear and unambiguous
 - [ ] Examples work as documented

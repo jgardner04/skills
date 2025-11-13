@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(gh api:*)",
+      "Bash(pip install:*)",
+      "Bash(python scripts/validate_skill.py:*)"
     ],
     "deny": [],
     "ask": []

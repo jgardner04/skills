@@ -1,0 +1,3 @@
+# Python dependencies for skills validation and packaging scripts
+
+PyYAML>=6.0.0,<7.0.0
